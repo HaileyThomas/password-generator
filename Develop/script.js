@@ -2,18 +2,15 @@
 var generateBtn = document.querySelector("#generate");
 
 // Generate Password Function
-
 var generatePassword = function () {
-  // window prompt for character length
+
+  // character length variable and prompt
   var characterLength = window.prompt("Select how long you'd like your password to be. Min - 8 Max - 128");
   // verify character length
-  if (characterLength < 8 || characterLength > 128) {
-    window.alert("You need to select a valid number.");
-    return;
-  } else if (characterLength === "" || characterLength === "null") {
-    window.alert("You need to select a valid number.");
-    return;
+  while (characterLength < 8 || characterLength > 128) {
+    characterLength = prompt("Enter a valid number. Min - 8 Max - 128");
   }
+  console.log(characterLength);
   // window prompt for lowercase
   var lowerCase = window.confirm("Would you like to use lowercase letters?");
   // window prompt for uppercase
@@ -23,31 +20,33 @@ var generatePassword = function () {
   // window prompt for special characters
   var special = window.confirm("Would you like to use special characters?");
   // verify that at least one of the above was selected
-  if (lowerCase && upperCase && numbers && special === false) {
-    window.alert("Please select one of the previous options to continue.")
-    return;
+  while (lowerCase === false && upperCase === false && numbers === false && special === false) {
+    window.alert("Please select at least one of the previous options");
+    break;
   }
+
+
   // array for lowercase
-  var addLowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  var arrLowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   // array for uppercase
-  var addUpperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+  var arrUpperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   // array for numbers
-  var addNumbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+  var arrNumbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
   // array for special characters
-  var addSpecial = ["~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=", "{", "[", "}", "]", "|", ":", ";", "'", "<", ",", ">", ".", "?", "/"];
+  var arrSpecial = ["~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=", "{", "[", "}", "]", "|", ":", ";", "'", "<", ",", ">", ".", "?", "/"];
   // array for all
   var arrCharacters = []
   if (upperCase) {
-    arrCharacters = arrCharacters.concat(addUpperCase);
+    arrCharacters = arrCharacters.concat(arrUpperCase);
   }
   if (lowerCase) {
-    arrCharacters = arrCharacters.concat(addLowerCase);
+    arrCharacters = arrCharacters.concat(arrLowerCase);
   }
   if (numbers) {
-    arrCharacters = arrCharacters.concat(addNumbers);
+    arrCharacters = arrCharacters.concat(arrNumbers);
   }
   if (special) {
-    arrCharacters = arrCharacters.concat(addSpecial);
+    arrCharacters = arrCharacters.concat(arrSpecial);
   }
 
   console.log(addUpperCase[Math.floor(Math.random() * addUpperCase.length)]);
