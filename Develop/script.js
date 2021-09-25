@@ -25,7 +25,6 @@ var generatePassword = function () {
     break;
   }
 
-
   // array for lowercase
   var arrLowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   // array for uppercase
@@ -49,7 +48,7 @@ var generatePassword = function () {
     arrCharacters = arrCharacters.concat(arrSpecial);
   }
 
-  console.log(addUpperCase[Math.floor(Math.random() * addUpperCase.length)]);
+  console.log(arrUpperCase[Math.floor(Math.random() * arrUpperCase.length)]);
   console.log(arrCharacters);
   console.log(arrCharacters[Math.floor(Math.random() * arrCharacters.length)]);
 
