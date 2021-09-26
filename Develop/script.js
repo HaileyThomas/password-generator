@@ -13,19 +13,18 @@ var generatePassword = function () {
   }
   // testing
   console.log("Character Length is: " + characterLength);
-  // window prompt for lowercase
-  var lowerCase = window.confirm("Would you like to use lowercase letters?");
-  // window prompt for uppercase
-  var upperCase = window.confirm("Would you like to use uppercase letters?");
-  // window prompt for numbers
-  var numbers = window.confirm("Would you like to use numbers?");
-  // window prompt for special characters
-  var special = window.confirm("Would you like to use special characters?");
-  // verify that at least one of the above was selected
-  while (lowerCase === false && upperCase === false && numbers === false && special === false) {
-    window.alert("Please select at least one of the previous options");
-    break;
+  do {
+    // window prompt for lowercase
+    var lowerCase = window.confirm("Would you like to use lowercase letters?");
+    // window prompt for uppercase
+    var upperCase = window.confirm("Would you like to use uppercase letters?");
+    // window prompt for numbers
+    var numbers = window.confirm("Would you like to use numbers?");
+    // window prompt for special characters
+    var special = window.confirm("Would you like to use special characters?");
   }
+  // verify that at least one of the above was selected
+  while (lowerCase === false && upperCase === false && numbers === false && special === false);
 
   // ARRAYS
   // array for lowercase
