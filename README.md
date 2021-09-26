@@ -1,10 +1,7 @@
 # Password Generator 
 ## Description
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+Password generators are important in this day in age with so many people trying to gain access to peoples accounts. Building a password generator helps myself and others to stay safe on the internet with providing a way to create a safe, secure random string of characters that fit exactly what you need.
+In this project, I was able the get a better grasp of javascript and some of it's basic functions. I learned when and how to implement a while loop, a for loop and if statement and well as correctly name and call variables to make the generator work! It was a challenge but I learned a lot and was very excited when it worked :)
 ## Table of Contents
 - [Usage](#usage)
 - [Credits](#credits)
