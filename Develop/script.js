@@ -11,7 +11,8 @@ var generatePassword = function () {
   while (characterLength < 8 || characterLength > 128) {
     characterLength = prompt("Enter a valid number. Min - 8 Max - 128");
   }
-  console.log(characterLength);
+  // testing
+  console.log("Character Length is: " + characterLength);
   // window prompt for lowercase
   var lowerCase = window.confirm("Would you like to use lowercase letters?");
   // window prompt for uppercase
@@ -37,32 +38,40 @@ var generatePassword = function () {
   var arrSpecial = ["~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=", "{", "[", "}", "]", "|", ":", ";", "'", "<", ",", ">", ".", "?", "/"];
   // array for all
   var arrCharacters = []
+  // if upperCase selected, add to array for all
   if (upperCase) {
     arrCharacters = arrCharacters.concat(arrUpperCase);
   }
+  // if lowerCase selected, add to array for all
   if (lowerCase) {
     arrCharacters = arrCharacters.concat(arrLowerCase);
   }
+  // if numbers selected, add to array for all
   if (numbers) {
     arrCharacters = arrCharacters.concat(arrNumbers);
   }
+  // if special selected, add to array for all
   if (special) {
     arrCharacters = arrCharacters.concat(arrSpecial);
   }
   // testing
-  console.log("Random Test" + arrCharacters[Math.floor(Math.random() * arrCharacters.length)]);
-  console.log("Current array" + arrCharacters);
+  console.log("Random Test: " + arrCharacters[Math.floor(Math.random() * arrCharacters.length)]);
+  console.log("Current Array: " + arrCharacters);
 
   // CREATE PASSWORD
+  // name variable
   var getPassword = '';
+  // loop through array for amount entered in characterLength
   for (i = 0; i < characterLength; i++) {
+    // randomize and assign to variable
     getPassword += arrCharacters[Math.floor(Math.random() * arrCharacters.length)];
-
+    //testing
     console.log(arrCharacters[Math.floor(Math.random() * arrCharacters.length)]);
   };
-  console.log("Password:" + getPassword);
-  return getPassword;
+  console.log("Password: " + getPassword);
 
+  // GENERATE PASSWORD
+  return getPassword;
 }
 
 // Write password to the #password input
