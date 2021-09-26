@@ -4,6 +4,7 @@ var generateBtn = document.querySelector("#generate");
 // Generate Password Function
 var generatePassword = function () {
 
+  // PROMPTS
   // character length variable and prompt
   var characterLength = window.prompt("Select how long you'd like your password to be. Min - 8 Max - 128");
   // verify character length
@@ -25,6 +26,7 @@ var generatePassword = function () {
     break;
   }
 
+  // ARRAYS
   // array for lowercase
   var arrLowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   // array for uppercase
@@ -47,16 +49,20 @@ var generatePassword = function () {
   if (special) {
     arrCharacters = arrCharacters.concat(arrSpecial);
   }
+  // testing
+  console.log("Random Test" + arrCharacters[Math.floor(Math.random() * arrCharacters.length)]);
+  console.log("Current array" + arrCharacters);
 
-  console.log(arrUpperCase[Math.floor(Math.random() * arrUpperCase.length)]);
-  console.log(arrCharacters);
-  console.log(arrCharacters[Math.floor(Math.random() * arrCharacters.length)]);
-
-  var getPassword = []
+  // CREATE PASSWORD
+  var getPassword = '';
   for (i = 0; i < characterLength; i++) {
-    console.log(arrCharacters[Math.floor(Math.random) * arrCharacters.length]);
-  }
+    getPassword += arrCharacters[Math.floor(Math.random() * arrCharacters.length)];
+
+    console.log(arrCharacters[Math.floor(Math.random() * arrCharacters.length)]);
+  };
+  console.log("Password:" + getPassword);
   return getPassword;
+
 }
 
 // Write password to the #password input
